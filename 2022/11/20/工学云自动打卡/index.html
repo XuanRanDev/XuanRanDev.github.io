@@ -1,0 +1,414 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>工学云自动打卡 | XuanRan's Blog</title><meta name="author" content="XuanRan"><meta name="copyright" content="XuanRan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Auto-GongXueYun   🥰工学云自动打卡解决方案🥰   支持多用户、自定义位置信息、保持登录状态、每日打卡检查  打卡位置浮动、自定义UA、微信消息推送、自动填写周报（TODO）    视频教程      前言1、请务必认真阅读此文档后继续！ 2、本项目开源&amp;免费，所有开发均仅限于学习交流，禁止用于任何商业用途。 3、本项目开源地址为：https:&#x2F;&#x2F;github.co">
+<meta property="og:type" content="article">
+<meta property="og:title" content="工学云自动打卡">
+<meta property="og:url" content="https://xuanran.cc/2022/11/20/%E5%B7%A5%E5%AD%A6%E4%BA%91%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1/index.html">
+<meta property="og:site_name" content="XuanRan&#39;s Blog">
+<meta property="og:description" content="Auto-GongXueYun   🥰工学云自动打卡解决方案🥰   支持多用户、自定义位置信息、保持登录状态、每日打卡检查  打卡位置浮动、自定义UA、微信消息推送、自动填写周报（TODO）    视频教程      前言1、请务必认真阅读此文档后继续！ 2、本项目开源&amp;免费，所有开发均仅限于学习交流，禁止用于任何商业用途。 3、本项目开源地址为：https:&#x2F;&#x2F;github.co">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tc.xuanran.cc/2022/11/20/bd6d2176a735b.jpg">
+<meta property="article:published_time" content="2022-11-20T01:20:00.000Z">
+<meta property="article:modified_time" content="2023-06-18T09:00:52.025Z">
+<meta property="article:author" content="XuanRan">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tc.xuanran.cc/2022/11/20/bd6d2176a735b.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://xuanran.cc/2022/11/20/%E5%B7%A5%E5%AD%A6%E4%BA%91%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"内容失效","messageNext":"自从上次更新以来，文章的内容可能已经过时了。"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '工学云自动打卡',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-06-18 09:00:52'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/author.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://tc.xuanran.cc/2022/11/20/bd6d2176a735b.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">XuanRan's Blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">工学云自动打卡</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-11-20T01:20:00.000Z" title="发表于 2022-11-20 01:20:00">2022-11-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-18T09:00:52.025Z" title="更新于 2023-06-18 09:00:52">2023-06-18</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="工学云自动打卡"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><div align="center">
+<h1 align="center">
+Auto-GongXueYun
+</h1>
+<p align="center">
+🥰工学云自动打卡解决方案🥰
+</p>
+<p align="center">
+支持多用户、自定义位置信息、保持登录状态、每日打卡检查
+</br>
+打卡位置浮动、自定义UA、微信消息推送、自动填写周报（TODO）
+</br>
+</p>
+</br>
+<a target="_blank" href="https://www.bilibili.com/video/BV1VP4y117w8/?spm_id_from=333.999.0.0&vd_source=23b414916f0ead82eaa42a85d58614c8">视频教程</a>
+</div>
+</br>
+
+
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>1、请务必认真阅读此文档后继续！</strong></p>
+<p><strong>2、本项目开源&amp;免费，所有开发均仅限于学习交流，禁止用于任何商业用途。</strong></p>
+<p><strong>3、本项目开源地址为：<a target="_blank" rel="noopener" href="https://github.com/XuanRanDev/Auto-GongXueYun">https://github.com/XuanRanDev/Auto-GongXueYun</a></strong></p>
+<p><strong>4、如基于或参考此项目进行二次开发，请注明原作者并使用GPL2.0许可证开源</strong></p>
+</br>
+
+
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E9%97%A8%E6%A7%9B">使用门槛</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95">使用方法</a><ul>
+<li><a href="#github-actions">Github Actions</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E8%87%AA%E5%B7%B1%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2">使用自己的服务器部署</a></li>
+</ul>
+</li>
+<li><a href="#%E5%90%AF%E7%94%A8%E4%BF%9D%E6%8C%81%E7%99%BB%E5%BD%95">启用保持登录</a></li>
+<li><a href="#%E5%90%AF%E7%94%A8%E6%AF%8F%E6%97%A5%E6%89%93%E5%8D%A1%E6%A3%80%E6%9F%A5">启用每日打卡检查</a></li>
+<li><a href="#%E5%90%AF%E7%94%A8%E6%89%93%E5%8D%A1%E4%BD%8D%E7%BD%AE%E6%B5%AE%E5%8A%A8">启用打卡位置浮动</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1%E6%97%B6%E9%97%B4">修改自动打卡时间🎯</a></li>
+<li><a href="#%E8%B5%9E%E5%8A%A9%E6%94%AF%E6%8C%81">赞助支持</a></li>
+<li><a href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98">常见问题</a><ul>
+<li><a href="#%E6%89%93%E5%8D%A1%E5%A4%B1%E8%B4%A5">打卡失败</a></li>
+<li><a href="#%E5%A2%9E%E5%8A%A0%E6%89%93%E5%8D%A1%E6%A3%80%E6%9F%A5%E8%BF%90%E8%A1%8C%E6%AC%A1%E6%95%B0">增加打卡检查运行次数</a></li>
+<li><a href="#%E4%B8%8A%E7%8F%AD%E5%8F%8A%E4%B8%8B%E7%8F%AD%E5%8D%A1%E5%88%A4%E6%96%AD%E9%80%BB%E8%BE%91">上班及下班卡判断逻辑</a></li>
+<li><a href="#%E6%9A%82%E5%81%9C%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1">暂停自动打卡</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">修改配置文件</a></li>
+<li><a href="#%E4%BF%9D%E6%8C%81%E6%9C%80%E6%96%B0%E4%BB%A3%E7%A0%81">保持最新代码</a></li>
+</ul>
+</li>
+</ul>
+</br>
+</br>
+
+
+<h2 id="使用门槛"><a href="#使用门槛" class="headerlink" title="使用门槛"></a>使用门槛</h2><p>帮我点一下源码地址右上角的星星，另外你电脑最好有魔法，如果你没有魔法Github的网站是经常打不开的（如果你能当我没说</p>
+<p>我使用的魔法是付费的，新用户注册送1G流量（够用了）</p>
+<p><a target="_blank" rel="noopener" href="https://blog.xuanran.cc/2022/11/19/Accelerator/">如果你没魔法想要找魔法就点我</a></p>
+<p>2023年2月28日补充：<br>我个人时间也是有限的，教程已经写的很详细了，遇到问题请自行解决，如果需要我协助解决，仅限赞助过的协助（不在于金额多少，只是想避免那些只想白嫖，甚至前脚加我解决问题，后脚就在朋友圈发：“代打卡，价格美丽”的），赞助时请在备注里备注好你的微信昵称或微信号，然后向XuanRan_Dev这个微信号发送好友请求。</p>
+<p>2023年6月18日补充：<br>此处已经说的很明白了，如果你直接发送好友申请是不会通过的，别白费力气了。</p>
+<p></br></br></p>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h3 id="Github-Actions"><a href="#Github-Actions" class="headerlink" title="Github Actions"></a>Github Actions</h3><p>推荐指数：⭐⭐⭐⭐⭐</p>
+<p>优点：适合没有自己服务器的人使用。</p>
+<p>缺点：</p>
+<p>1、每日打卡时间无法保证十分准时，拥有10-30分钟的误差。</p>
+<p>2、Action在某些情况下可能会连接工学云服务器超时造成打卡失败(已加入每日打卡检查，当未打卡时会补签)。</p>
+</br>
+
+<p>1.点击Star后Fork本仓库🤪</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://tc.xuanran.cc/2022/11/13/1932d085c97c2.png" alt="1.png"><br><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://tc.xuanran.cc/2022/11/13/c6e9abebb113c.png" alt="2.png"><br></br><br>2.准备配置文件🤔</p>
+<p>如果想同时打卡多个用户,请再添加一个数据体就好了(<a target="_blank" rel="noopener" href="https://github.com/XuanRanDev/Auto-GongXueYun/wiki">如果还不理解点我</a>)</p>
+<p><strong>注意：配置文件模板下方有配置含义，请务必参照配置含义填写</strong></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">&quot;enable&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">&quot;phone&quot;</span>: <span class="string">&quot;17666666666&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;password&quot;</span>: <span class="string">&quot;1111111111&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;keepLogin&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">&quot;token&quot;</span>: <span class="string">&quot;如果keepLogin为false就不填&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;userId&quot;</span>: <span class="string">&quot;如果keepLogin为false就不填&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;planId&quot;</span>: <span class="string">&quot;如果keepLogin为false就不填&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;randomLocation&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">&quot;user-agent&quot;</span>: <span class="string">&quot;null&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;signCheck&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">&quot;country&quot;</span>: <span class="string">&quot;中国&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;province&quot;</span>: <span class="string">&quot;河南省&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;city&quot;</span>: <span class="string">&quot;洛阳市&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;area&quot;</span>: <span class="string">&quot;新安县&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;desc&quot;</span>: <span class="string">&quot;打卡备注&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;type&quot;</span>: <span class="string">&quot;android&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;address&quot;</span>: <span class="string">&quot;你的详细地址&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;longitude&quot;</span>: <span class="string">&quot;101.987848&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;latitude&quot;</span>: <span class="string">&quot;33.100038&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;pushKey&quot;</span>: <span class="string">&quot;dhsajifysfsafsdfdsxxxxxx&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>其配置含义如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>enable</td>
+<td>是否启用该用户的打卡（true或false)</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>手机号</td>
+</tr>
+<tr>
+<td>password</td>
+<td>密码</td>
+</tr>
+<tr>
+<td>keepLogin</td>
+<td>是否启用保持登录，启用后程序每次打卡将不再重新登录，避免挤掉手机工学云的登录，启用后请通过抓包工学云获取你的token、userId、planId然后填写在下方</td>
+</tr>
+<tr>
+<td>token</td>
+<td>如果keepLogin启用，则在此填写你的token</td>
+</tr>
+<tr>
+<td>userId</td>
+<td>如果keepLogin启用，则在此填写你的userId</td>
+</tr>
+<tr>
+<td>planId</td>
+<td>如果keepLogin启用，则在此填写你的planId</td>
+</tr>
+<tr>
+<td>randomLocation</td>
+<td>是否启用打卡位置浮动，启用后每次打卡会在原有位置基础上进行位置浮动</td>
+</tr>
+<tr>
+<td>user-agent</td>
+<td>是否自定义UA，如果不需要自定义填null（字符串形式），否则填写你的UA（<a target="_blank" rel="noopener" href="https://wp.xuanran.cc/s/JBTA">可以点我随便选一个</a>）</td>
+</tr>
+<tr>
+<td>signCheck</td>
+<td>每日签到检查,某些情况下action可能没网络造成打卡失败,启用此选项后,将在每日11点以及23点检查今日的打卡状态,如未打卡则补卡</td>
+</tr>
+<tr>
+<td>country</td>
+<td>国家</td>
+</tr>
+<tr>
+<td>province</td>
+<td>省份</td>
+</tr>
+<tr>
+<td>city</td>
+<td>城市</td>
+</tr>
+<tr>
+<td>area</td>
+<td>区/县</td>
+</tr>
+<tr>
+<td>desc</td>
+<td>打卡备注</td>
+</tr>
+<tr>
+<td>type</td>
+<td>android 或 ios</td>
+</tr>
+<tr>
+<td>address</td>
+<td>详细地址，如果你打卡的时候中间带的有·这个符号你也就手动加上，这里填什么，打卡后工学云就会显示你填的内容（工学云默认·这个符号左右都会有一个空格）</td>
+</tr>
+<tr>
+<td>longitude</td>
+<td>打卡位置精度,通过坐标拾取来完成(仅需精确到小数点后6位)，<a target="_blank" rel="noopener" href="https://jingweidu.bmcx.com/">传送门</a></td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>打卡位置纬度,通过坐标拾取来完成(仅需精确到小数点后6位)，<a target="_blank" rel="noopener" href="https://jingweidu.bmcx.com/">传送门</a></td>
+</tr>
+<tr>
+<td>pushKey</td>
+<td>打卡结果微信推送，微信推送使用的是pushPlus，请到官网绑定微信(<a target="_blank" rel="noopener" href="https://www.pushplus.plus/">传送门</a>)，然后在发送消息里面把你的token复制出来粘贴到pushKey这项</td>
+</tr>
+</tbody></table>
+</br>
+
+<p>3.配置Secret</p>
+<p>填写完成后请复制如上配置文件，然后打开仓库的Settings-&gt;Secrets-&gt;Actions-&gt;New repository secret</p>
+<p>Name填USERS</p>
+<p>Secret填改好的配置文件</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://tc.xuanran.cc/2022/11/13/2143b390f8199.png" alt="3.png"><br><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://tc.xuanran.cc/2022/11/13/8de9cb85e479b.png" alt="4.png"></p>
+<p>4.运行测试<br><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://tc.xuanran.cc/2022/11/13/500e789b3dfec.png" alt="5.png"><br><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://tc.xuanran.cc/2022/11/13/1366e5e0ced97.png" alt="6.png"><br><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://tc.xuanran.cc/2022/11/13/2a2b4b7e01884.png" alt="7.png"><br><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://tc.xuanran.cc/2022/11/13/bd1cd3218f77a.png" alt="8.png"><br><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://tc.xuanran.cc/2022/11/13/33c6cec2e37ec.png" alt="9.png"><br><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://tc.xuanran.cc/2022/11/13/a9e80f17d304b.png" alt="10.png"><br></br></br></br></br></p>
+<p>至此，自动打卡将会在每天7点和18点左右自动运行打卡。😉</p>
+<p></br></br></br></p>
+<h3 id="使用自己的服务器部署"><a href="#使用自己的服务器部署" class="headerlink" title="使用自己的服务器部署"></a>使用自己的服务器部署</h3><p>推荐指数：⭐⭐</p>
+<p>优点：运行稳定、准时。</p>
+<p>缺点：有一定的上手成本。</p>
+<p>具体教程：</p>
+<p>1、下载本仓库源码到你服务器。</p>
+<p>2、在服务器中安装好Python环境。</p>
+<p>3、运行命令来下载依赖。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install pytz</span><br><span class="line">pip install pycryptodome</span><br></pre></td></tr></table></figure>
+
+<p>4、在百度搜索：你的操作系统+ 定时任务，查看如何创建定时任务。</p>
+<p>5、创建一个user.json配置文件在项目目录，并将配置文件放入其中</p>
+<p>6、运行python main.py测试</p>
+<p></br></br></br></p>
+<h2 id="启用保持登录"><a href="#启用保持登录" class="headerlink" title="启用保持登录"></a>启用保持登录</h2><p>启用保持登录指的是打卡程序在启用保持登录开启后不再使用账号密码登录打卡，而是使用Token方式。</p>
+<p>启用保持登录需要会抓包，而且要抓https的包，如果你手机没Root就别想了</p>
+<p>1、下载小黄鸟，抓包软件选择工学云</p>
+<p>2、打开工学云</p>
+<p>3、在抓包软件里找到<a target="_blank" rel="noopener" href="https://api.moguding.net/attendence/clock/v1/listSynchro">https://api.moguding.net/attendence/clock/v1/listSynchro</a><br>这个请求</p>
+<p>4、找到Token以及userId、planId<br><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://tc.xuanran.cc/2022/11/13/520b118fe371a.jpg" alt="11"><br><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://tc.xuanran.cc/2022/11/13/ec400140df3d8.jpg" alt="12"></p>
+<p></br></br></p>
+<h2 id="启用每日打卡检查"><a href="#启用每日打卡检查" class="headerlink" title="启用每日打卡检查"></a>启用每日打卡检查</h2><p>因为Github Action某些情况下可能会无法连接工学云服务器造成打卡+推送失败问题，为此推出每日打卡检查，启用后，每日11点（有1次检查）以及23点（也有1次检查）将会对今日打卡情况进行分析，如存在漏签则自动补签。</p>
+<p>如需开启，请在配置文件中的signCheck设置为true<br></br></br></p>
+<h2 id="启用打卡位置浮动"><a href="#启用打卡位置浮动" class="headerlink" title="启用打卡位置浮动"></a>启用打卡位置浮动</h2><p>启用打卡位置浮动后，每次打卡系统会在原有经纬度中删掉最后一位数字，并随机加入一位数字，使每次打卡经纬度不同。<br></br></br></p>
+<h2 id="修改自动打卡时间🎯"><a href="#修改自动打卡时间🎯" class="headerlink" title="修改自动打卡时间🎯"></a>修改自动打卡时间🎯</h2><p>修改自动打卡时间需要了解Cron表达式的使用，且需注意不要将打卡时间设置为11点以及23点，此时间段中会运行每日打卡检查，自动打卡在此时间段内不生效。😴</p>
+</br>
+1.编辑sign.yml文件，找到图中我圈出的部分
+
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://tc.xuanran.cc/2022/11/10/5d81dcc0bff46.png" alt="image-20221021093411661"></p>
+</br>
+
+<p>2.编辑表达式</p>
+<p>GitHub的cron表达式不支持精准到秒，所以从最左边开始，分别为：</p>
+<p>分钟 小时 日 月份 星期</p>
+<p>而且Github的服务器时间会比我们晚八个小时，所以在你需要打卡的时间-8配置到里面就行了</p>
+</br>
+
+<p>例如说在上午十点打上班卡就是:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">cron:</span> <span class="string">&quot;00 02 * * *&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>晚上九点打下班卡：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">cron:</span> <span class="string">&quot;00 13 * * *&quot;</span></span><br></pre></td></tr></table></figure>
+
+</br>
+</br>
+
+
+
+
+
+<h2 id="赞助支持"><a href="#赞助支持" class="headerlink" title="赞助支持"></a>赞助支持</h2><p>如果此仓库帮助了你学到了新知识，你可以帮我买杯可乐。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://tc.xuanran.cc/2022/11/20/b8f5ddc944634.png" alt="赞助支持"></p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="打卡失败"><a href="#打卡失败" class="headerlink" title="打卡失败"></a>打卡失败</h3><p>如果遇到action运行失败或者打卡失败，99%都是Github无法连接工学云服务器，属于玄学问题，猜测是服务器IP被拉黑，这点没很好的处理办法，只能重试，如打卡十分重要可适当增加每日打卡检查次数。</p>
+<h3 id="增加打卡检查运行次数"><a href="#增加打卡检查运行次数" class="headerlink" title="增加打卡检查运行次数"></a>增加打卡检查运行次数</h3><p>从1.0版本开始，每日打卡检查从每日运行4次调整为每日2次并默认关闭，具体原因请查看更新日志，如需要调整每日打卡检查运行次数，可先学习修改自动打卡这一小节的基础知识后再来。<br>默认情况下的sign.yml时间配置如下：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">cron:</span> <span class="string">&quot;00 23 * * *&quot;</span> <span class="comment"># 上班卡</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">cron:</span> <span class="string">&quot;15 03 * * *&quot;</span> <span class="comment"># 每日签到检查，如不需要可删除这行，其含义为每日11点15运行（存在延时）</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">cron:</span> <span class="string">&quot;00 10 * * *&quot;</span> <span class="comment"># 下班卡</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">cron:</span> <span class="string">&quot;15 15 * * *&quot;</span> <span class="comment"># 每日签到检查，如不需要可删除这行，其含义为每日23点15运行（存在延时）</span></span><br></pre></td></tr></table></figure>
+<p><strong>打卡检查仅限在每日11点以及23点运行，其他时间运行会造成多打卡情况出现</strong>，所以如果你需要增加自动打卡的次数就复制第二行或第四行，然后修改具体的时间即可，但请注意分钟必须限制在0-25之间（因action运行20分钟左右的延时，防止action启动后已过11/23点），例如说我想要增加两次打卡检查，则可这样写：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">cron:</span> <span class="string">&quot;00 23 * * *&quot;</span> <span class="comment"># 上班卡</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">cron:</span> <span class="string">&quot;15 03 * * *&quot;</span> <span class="comment"># 每日签到检查，如不需要可删除这行，其含义为每日11点15运行（存在延时）</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">cron:</span> <span class="string">&quot;05 03 * * *&quot;</span> <span class="comment"># 每日签到检查，如不需要可删除这行，其含义为每日11点5运行（存在延时）</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">cron:</span> <span class="string">&quot;00 10 * * *&quot;</span> <span class="comment"># 下班卡</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">cron:</span> <span class="string">&quot;15 15 * * *&quot;</span> <span class="comment"># 每日签到检查，如不需要可删除这行，其含义为每日23点15运行（存在延时）</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">cron:</span> <span class="string">&quot;05 15 * * *&quot;</span> <span class="comment"># 每日签到检查，如不需要可删除这行，其含义为每日23点5运行（存在延时）</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="上班及下班卡判断逻辑"><a href="#上班及下班卡判断逻辑" class="headerlink" title="上班及下班卡判断逻辑"></a>上班及下班卡判断逻辑</h3><p>每日12点以前运行全部为上班，12点及以后默认为下班卡。<br></br></p>
+<h3 id="暂停自动打卡"><a href="#暂停自动打卡" class="headerlink" title="暂停自动打卡"></a>暂停自动打卡</h3><p>在Actions-Sign-右边三个点disable workflow<br></br></p>
+<h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><p>Settings-Secrets-Actions-下面Repository secrets有个USERS，点击小箭头编辑，里面没内容是正常的，配置文件一旦保存将无法再被看到。<br></br></p>
+<h3 id="保持最新代码"><a href="#保持最新代码" class="headerlink" title="保持最新代码"></a>保持最新代码</h3><p>随着工学云的更新，自动打卡可能会在某个版本后失效，开发者会及时更新代码，但你Fork的代码并无法保证与主分支（我的代码）实时同步，此时需要手动同步代码，需要注意的是Github不会有任何通知告诉你代码过时或有新版发布，为此，你可以扫描下方二维码关注我的公众号，当有重要更新或调整时会在公众号发文提醒。</p>
+<p>手动同步代码方法：<br><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://tc.xuanran.cc/2022/11/30/1dad103cbcd0a.png" alt="微信截图_20221130142844.png"></p>
+<p>公众号：<br><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://tc.xuanran.cc/2022/12/02/d1b00d4d20886.jpg" alt="e87a1043ea8f4fada3bb99ba8e35767.jpg"></p>
+<p></br></br><br>开发&amp;维护不易，如果此仓库对你的学习有帮助，你可以给我买瓶可乐来支持我维护下去（<a href="#%E8%B5%9E%E5%8A%A9%E6%94%AF%E6%8C%81">点我支持</a>），Thanks.</p>
+<p>😀😀😀😀😀</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">
+Auto-GongXueYun
+</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-number">1.2.</span> <span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E9%97%A8%E6%A7%9B"><span class="toc-number">1.3.</span> <span class="toc-text">使用门槛</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.</span> <span class="toc-text">使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Github-Actions"><span class="toc-number">1.4.1.</span> <span class="toc-text">Github Actions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E8%87%AA%E5%B7%B1%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2"><span class="toc-number">1.4.2.</span> <span class="toc-text">使用自己的服务器部署</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E7%94%A8%E4%BF%9D%E6%8C%81%E7%99%BB%E5%BD%95"><span class="toc-number">1.5.</span> <span class="toc-text">启用保持登录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E7%94%A8%E6%AF%8F%E6%97%A5%E6%89%93%E5%8D%A1%E6%A3%80%E6%9F%A5"><span class="toc-number">1.6.</span> <span class="toc-text">启用每日打卡检查</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E7%94%A8%E6%89%93%E5%8D%A1%E4%BD%8D%E7%BD%AE%E6%B5%AE%E5%8A%A8"><span class="toc-number">1.7.</span> <span class="toc-text">启用打卡位置浮动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1%E6%97%B6%E9%97%B4%F0%9F%8E%AF"><span class="toc-number">1.8.</span> <span class="toc-text">修改自动打卡时间🎯</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B5%9E%E5%8A%A9%E6%94%AF%E6%8C%81"><span class="toc-number">1.9.</span> <span class="toc-text">赞助支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-number">1.10.</span> <span class="toc-text">常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%8D%A1%E5%A4%B1%E8%B4%A5"><span class="toc-number">1.10.1.</span> <span class="toc-text">打卡失败</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E6%89%93%E5%8D%A1%E6%A3%80%E6%9F%A5%E8%BF%90%E8%A1%8C%E6%AC%A1%E6%95%B0"><span class="toc-number">1.10.2.</span> <span class="toc-text">增加打卡检查运行次数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E7%8F%AD%E5%8F%8A%E4%B8%8B%E7%8F%AD%E5%8D%A1%E5%88%A4%E6%96%AD%E9%80%BB%E8%BE%91"><span class="toc-number">1.10.3.</span> <span class="toc-text">上班及下班卡判断逻辑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9A%82%E5%81%9C%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1"><span class="toc-number">1.10.4.</span> <span class="toc-text">暂停自动打卡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.10.5.</span> <span class="toc-text">修改配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%9D%E6%8C%81%E6%9C%80%E6%96%B0%E4%BB%A3%E7%A0%81"><span class="toc-number">1.10.6.</span> <span class="toc-text">保持最新代码</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2018 - 2023 By XuanRan</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"></div><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
